@@ -1,0 +1,438 @@
+:root {
+  --colorwhite: #eee;
+  --colorgreen: #20dab2;
+  --bgcolor: #eff7fa;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: var(--colorwhite);
+  font-family: "Amiri", serif;
+  margin: 0;
+  padding: 0;
+}
+/* start the header */
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* end the header */
+
+/* start nav */
+nav {
+  position: sticky;
+  z-index: 1022;
+  top: 0;
+  background-color: var(--colorgreen);
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0.5rem;
+}
+nav .logo {
+  display: none;
+}
+nav button {
+  color: var(--colorwhite);
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+nav ul li a {
+  text-decoration: none;
+}
+nav ul {
+  display: none;
+  list-style: none;
+  width: 50%;
+  transform: translatex(20px);
+}
+nav ul li {
+  background-color: var(--colorwhite);
+  padding: 0;
+  text-align: center;
+  margin-top: 2px;
+  border-radius: 5px;
+}
+nav ul li:hover {
+  transform: translatey(-2px);
+  box-shadow: 1px 1px 5px #ddd;
+}
+nav ul li a {
+  color: var(--colorgreen);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+nav button:focus + ul {
+  display: block;
+}
+
+form input {
+  border: none;
+  border-radius: 0.4rem;
+  text-align: center;
+  color: var(--colorbg);
+  background-color: var(--colorwhite);
+  padding: 0.5rem;
+  box-shadow: 1px 1px 5px #ddd;
+  color: var(--colorgreen);
+}
+
+form input:focus {
+  outline: none;
+}
+.sign span a {
+  text-decoration: none;
+  display: none;
+}
+.sign i {
+  color: var(--colorwhite);
+  margin-right: 1rem;
+}
+.sign i:hover {
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 5px #ddd;
+}
+/* end nav */
+/* start welcom */
+/*  welcom disigne */
+.welcom {
+  text-align: center;
+  color: var(--colorgreen);
+  background-color: var(--bgcolor);
+  transform: translateY(1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 5px #20dab2;
+  perspective: 100000000px; /* i watch the welcom in 10000000px  */
+}
+/* box of the image for retate  */
+.box {
+  position: relative;
+  transform-style: preserve-3d; /* for retate 3d */
+  width: 300px;
+  height: 300px;
+  animation-name: backface;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+}
+
+.welcom img {
+  display: block;
+  position: absolute;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px var(--colorgreen);
+  backface-visibility: hidden;
+}
+/* for retate the second image  */
+.welcom img:last-of-type {
+  transform: rotatey(180deg);
+}
+/* for pused animation  */
+.box:hover {
+  animation-play-state: paused;
+}
+/* animation for retate the box  */
+@keyframes backface {
+  0% {
+    transform: rotatey(-180deg);
+  }
+  50% {
+    transform: rotatey(180deg);
+  }
+  100% {
+    transform: rotatey(-180deg);
+  }
+}
+.welcom p {
+  font-size: 1rem;
+}
+.welcom p span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn button {
+  border: none;
+  background-color: var(--colorgreen);
+  color: var(--colorwhite);
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  box-shadow: 1px 1px 5px var(--colorgreen);
+  font-weight: bold;
+}
+.btn button:hover {
+  transform: translateY(-2px);
+}
+/* end welcom */
+/*start info */
+.info {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 2rem;
+  background: var(--bgcolor);
+  box-shadow: 1px 1px 5px var(--colorgreen);
+  color: var(--colorgreen);
+  height: 50px;
+}
+/*endinfo */
+/* start  list book */
+.list_book {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+  grid-template-columns: repeat(12, auto);
+  grid-template-areas:
+    "bk1 bk1 bk1 bk1 bk1 bk1 bk1 bk1 bk1 bk1 bk1 bk1 "
+    "bk2 bk2 bk2 bk2 bk2 bk2 bk2 bk2 bk2 bk2 bk2 bk2 "
+    "bk3 bk3 bk3 bk3 bk3 bk3 bk3 bk3 bk3 bk3 bk3 bk3 "
+    "bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 ";
+  margin-top: 2rem;
+}
+.book-rating {
+  margin-top: 0;
+  color: gold;
+  font-size: 1.5rem;
+}
+.list_book .book {
+  background: var(--bgcolor);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: var(--colorgreen);
+  line-height: 1;
+  border-radius: 5px;
+  width: 250px;
+  overflow: hidden;
+  transition: transform .5s;
+}
+.list_book .book:hover {
+  box-shadow: 1px 1px 5px #908686;
+  transform: translateY(-5px);
+}
+.list_book img:first-of-type {
+  width: 150px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
+}
+
+.list_book .book1 {
+  grid-area: bk1;
+}
+.list_book .book2 {
+  grid-area: bk2;
+}
+.list_book .book3 {
+  grid-area: bk3;
+}
+.list_book .book4 {
+  grid-area: bk4;
+}
+
+.list_book a .writer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.list_book h1 {
+  font-size: 1.5rem;
+}
+.list_book h2 {
+  color: rgb(119, 223, 191);
+  font-size: 20px;
+}
+/* end   list book */
+.footer {
+  background: var(--colorgreen);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--colorwhite);
+  padding: 1rem;
+}
+.footer img {
+  width: 200px;
+  display: block;
+  margin: auto;
+}
+.footer p {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--bgcolor);
+}
+
+.footer .sub:hover {
+  color: #413c3c;
+}
+.footer ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+}
+.footer ul li a {
+  color: var(--colorwhite);
+  font-size: 1.2rem;
+}
+.footer ul li:hover {
+  transform: translatey(-2px);
+}
+.footer ul li a:hover{
+  color: #413c3c;
+}
+/* medai for small screen  */
+@media screen and (min-width: 552px) {
+  .list_book {
+    grid-template-areas:
+      "bk1 bk1 bk1 bk1 bk1 bk1 bk2 bk2 bk2 bk2 bk2 bk2"
+      "bk3 bk3 bk3 bk3 bk3 bk3 bk4 bk4 bk4 bk4 bk4 bk4";
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    row-gap: 2rem;
+    margin-top: 2rem;
+  }
+}
+/* meadia for mediam screen  */
+@media screen and (min-width: 769px) {
+  .list_book {
+    grid-template-areas:
+      "bk1 bk1 bk1 bk1 bk2 bk2 bk2 bk2 bk3 bk3 bk3 bk3"
+      "bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4 bk4";
+    justify-content: center;
+  }
+  .list_book  .book {
+    margin: auto;
+    
+  } 
+
+}
+/*  media for large scrin  */
+@media (min-width: 1200px) {
+  /* start nav */
+  nav {
+    padding: 0 5.3rem;
+    height: 70px;
+    align-items: center;
+  }
+  nav .logo {
+    display: block;
+  }
+  nav .logo img {
+    width: 150px;
+  }
+  nav button {
+    display: none;
+  }
+  nav ul {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+  }
+  nav ul li {
+    background-color: transparent;
+  }
+  nav ul li a {
+    color: var(--colorwhite);
+  }
+  form {
+    transform: translateX(8rem);
+  }
+  .sign span a {
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: inline;
+  }
+  .sign .create {
+    background-color: var(--colorwhite);
+    color: var(--colorgreen);
+  }
+  .sign a.sign_in {
+    background-color: #ddd;
+    color: var(--colorgreen);
+  }
+  .sign a:hover {
+    background-color: var(--colorgreen);
+    color: var(--colorwhite);
+    box-shadow: 1px 1px 5px #ddd;
+    transition: all 0.5s;
+  }
+
+  .sign i {
+    display: none;
+  }
+  .sign a i {
+    color: var(--colorgreen);
+  }
+  /* end nav */
+  /* statrt welcom */
+  .welcom {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas:
+      "igm img img _ p p p p p p"
+      " btn btn btn btn btn btn btn btn btn btn ";
+    justify-content: space-between;
+    width: 87.7%;
+    margin: auto;
+  }
+  .welcom .box {
+    margin-right: 3rem;
+  }
+  .welcom img {
+    grid-area: img;
+  }
+  .welcom p {
+    grid-area: p;
+    margin: auto;
+  }
+  .btn {
+    grid-area: btn;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-around;
+  }
+  .btn button {
+    width: 25%;
+  }
+  /* end welcom */
+  /* start info */
+  .info {
+    width: 87.5%;
+    margin: auto;
+    margin-top: 2rem;
+  }
+  /* end info */
+  .list_book {
+    grid-template-areas: "bk1 bk1 bk1 bk2 bk2 bk2 bk3 bk3 bk3 bk4 bk4 bk4 ";
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+  }
+ 
+}
