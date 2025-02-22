@@ -11,7 +11,7 @@
     ------ FILTER_VALIDATE_INT
     ---------- Flag => FILTER_NULL_ON_FAILURE
     ---------- Options => min_range
-    ---------- Options => max_range
+    ---------- Options => max_range-
     ---------- Convert To Int On Success
 
     ------ FILTER_VALIDATE_FLOAT
