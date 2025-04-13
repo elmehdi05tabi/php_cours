@@ -1,0 +1,45 @@
+body {
+    background-color: #2a2929;
+}
+header {
+    background-color: gray;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+header h1 {
+    color: rgb(54, 51, 51);
+}
+a {
+    width: fit-content;
+    border: none;
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+form input {
+    background-color: #2a2929;
+    border: 1px 1px 1px white ;
+    margin-top: 10px;
+    width: 300px;
+    padding: 10px;
+}
+input:last-child{
+    background-color: orange;
+    color: white;
+}
+#message{
+    background-color: red;
+    border: dotted white 2px;
+    padding: 10px;
+    color: white;
+}
